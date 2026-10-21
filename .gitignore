@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+promo/music.wav
+promo/preview_*.jpg
+promo/source_bundle.zip
