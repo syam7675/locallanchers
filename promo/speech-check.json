@@ -1,0 +1,76 @@
+{
+  "engine": "faster-whisper tiny.en",
+  "language": "en",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "text": " Your next customer is already looking."
+    },
+    {
+      "start": 3.0,
+      "end": 7.0,
+      "text": " For a clinic, a salon, a place they can trust."
+    },
+    {
+      "start": 7.0,
+      "end": 11.0,
+      "text": " But being great at what you do is only the beginning."
+    },
+    {
+      "start": 11.0,
+      "end": 15.0,
+      "text": " You need to be found, make it easy to inquire,"
+    },
+    {
+      "start": 15.0,
+      "end": 18.0,
+      "text": " and give customers a reason to return."
+    },
+    {
+      "start": 18.0,
+      "end": 22.0,
+      "text": " Meet local lancers, your digital growth partner."
+    },
+    {
+      "start": 22.0,
+      "end": 26.0,
+      "text": " From local search and websites to WhatsApp,"
+    },
+    {
+      "start": 26.0,
+      "end": 28.0,
+      "text": " booking and automated follow-ups,"
+    },
+    {
+      "start": 29.0,
+      "end": 31.0,
+      "text": " One connected approach to visibility,"
+    },
+    {
+      "start": 31.0,
+      "end": 34.0,
+      "text": " conversion and retention."
+    },
+    {
+      "start": 34.0,
+      "end": 37.0,
+      "text": " Human strategy, AI execution,"
+    },
+    {
+      "start": 37.0,
+      "end": 40.0,
+      "text": " built around your local business."
+    },
+    {
+      "start": 40.0,
+      "end": 42.0,
+      "text": " Ready for your next chapter,"
+    },
+    {
+      "start": 42.0,
+      "end": 45.0,
+      "text": " visit local lancers, and start a conversation."
+    }
+  ]
+}

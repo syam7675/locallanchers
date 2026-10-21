@@ -1,0 +1,80 @@
+{
+  "provider": "Kokoro ONNX",
+  "voice": "af_heart",
+  "sampleRate": 24000,
+  "duration": 47.646,
+  "scenes": [
+    {
+      "index": 0,
+      "start": 0,
+      "duration": 3.4833333333333334,
+      "text": "Your next customer is already looking.",
+      "voiceStart": 0.55,
+      "voiceEnd": 2.6833333333333336
+    },
+    {
+      "index": 1,
+      "start": 3.4833333333333334,
+      "duration": 4.324,
+      "text": "For a clinic. A salon. A place they can trust.",
+      "voiceStart": 3.743333333333333,
+      "voiceEnd": 7.007333333333333
+    },
+    {
+      "index": 2,
+      "start": 7.807333333333333,
+      "duration": 4.217333333333333,
+      "text": "But being great at what you do is only the beginning.",
+      "voiceStart": 8.067333333333334,
+      "voiceEnd": 11.224666666666668
+    },
+    {
+      "index": 3,
+      "start": 12.024666666666667,
+      "duration": 6.6706666666666665,
+      "text": "You need to be found. Make it easy to enquire. And give customers a reason to return.",
+      "voiceStart": 12.284666666666666,
+      "voiceEnd": 17.895333333333333
+    },
+    {
+      "index": 4,
+      "start": 18.695333333333334,
+      "duration": 4.238666666666667,
+      "text": "Meet Local Lanchers. Your digital growth partner.",
+      "voiceStart": 18.955333333333336,
+      "voiceEnd": 22.134
+    },
+    {
+      "index": 5,
+      "start": 22.934,
+      "duration": 6.18,
+      "text": "From local search and websites, to WhatsApp, booking, and automated follow-ups.",
+      "voiceStart": 23.194000000000003,
+      "voiceEnd": 28.314000000000004
+    },
+    {
+      "index": 6,
+      "start": 29.114,
+      "duration": 5.262666666666667,
+      "text": "One connected approach to visibility, conversion, and retention.",
+      "voiceStart": 29.374000000000002,
+      "voiceEnd": 33.57666666666667
+    },
+    {
+      "index": 7,
+      "start": 34.376666666666665,
+      "duration": 5.924,
+      "text": "Human strategy. AI execution. Built around your local business.",
+      "voiceStart": 34.63666666666666,
+      "voiceEnd": 39.50066666666666
+    },
+    {
+      "index": 8,
+      "start": 40.300666666666665,
+      "duration": 7.3453333333333335,
+      "text": "Ready for your next chapter? Visit Local Lanchers. And start a conversation.",
+      "voiceStart": 40.56066666666666,
+      "voiceEnd": 45.446
+    }
+  ]
+}

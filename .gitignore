@@ -3,3 +3,8 @@ __pycache__/
 promo/music.wav
 promo/preview_*.jpg
 promo/source_bundle.zip
+promo/motion/picture.mp4
+promo/motion/score.wav
+promo/motion/voice_*.wav
+promo/motion/scene-*.png
+promo/motion/__pycache__/
