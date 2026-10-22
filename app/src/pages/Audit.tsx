@@ -104,6 +104,10 @@ export default function Audit() {
     setStep(step + 1);
   }
   async function submit() {
+    if (import.meta.env.VITE_PUBLIC_DEMO === "true") {
+      setErrors({ form: "This preview does not accept audit requests yet." });
+      return;
+    }
     const check = validateAudit(data);
     if (!check.value) {
       setErrors(check.errors);
@@ -189,6 +193,12 @@ export default function Audit() {
         </Link>
       </div>
       <div className="audit-form-panel">
+        {import.meta.env.VITE_PUBLIC_DEMO === "true" && (
+          <p className="audit-expectations" role="note">
+            Preview the form using example details. Submission is disabled until
+            hosted storage is connected; no request will be sent.
+          </p>
+        )}
         {result ? (
           <div className="audit-success" role="status">
             <CheckCircle2 size={45} />
@@ -493,7 +503,14 @@ export default function Audit() {
                     Back
                   </button>
                 )}
-                <button className="button" type="submit" disabled={busy}>
+                <button
+                  className="button"
+                  type="submit"
+                  disabled={
+                    busy ||
+                    (step === 2 && import.meta.env.VITE_PUBLIC_DEMO === "true")
+                  }
+                >
                   {busy ? (
                     <>
                       <LoaderCircle size={17} className="spin" />

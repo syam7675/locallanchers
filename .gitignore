@@ -17,3 +17,6 @@ app/.env
 app/.env.local
 app/.env.*.local
 **/__pycache__/
+
+# Vercel project linkage and credentials
+.vercel/
