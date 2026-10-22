@@ -1,0 +1,61 @@
+{
+  "engine": "axe-core",
+  "scope": "representative desktop routes, automated WCAG A/AA rules only",
+  "results": [
+    {
+      "route": "/",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious"
+        }
+      ]
+    },
+    {
+      "route": "/audit",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious"
+        }
+      ]
+    },
+    {
+      "route": "/plans",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/workspace",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/workspace?tab=enquiries",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious"
+        }
+      ]
+    },
+    {
+      "route": "/workspace?tab=reviews",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/ops",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/privacy",
+      "violations": [],
+      "incomplete": []
+    }
+  ]
+}

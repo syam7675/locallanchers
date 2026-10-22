@@ -8,3 +8,12 @@ promo/motion/score.wav
 promo/motion/voice_*.wav
 promo/motion/scene-*.png
 promo/motion/__pycache__/
+
+# Version 2.1 application runtime and local configuration
+app/node_modules/
+app/dist/
+app/data/
+app/.env
+app/.env.local
+app/.env.*.local
+**/__pycache__/

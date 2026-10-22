@@ -1,0 +1,92 @@
+{
+  "checks": [
+    {
+      "name": "Production routes render without overflow or broken images",
+      "passed": true
+    },
+    {
+      "name": "Desktop navigation opens, closes with Escape, and restores focus",
+      "passed": true
+    },
+    {
+      "name": "Pillar tabs work by pointer and keyboard",
+      "passed": true
+    },
+    {
+      "name": "Industry links select the matching playbook",
+      "passed": true
+    },
+    {
+      "name": "Process switcher opens the first-month roadmap",
+      "passed": true
+    },
+    {
+      "name": "Plan selection carries through to the audit request",
+      "passed": true
+    },
+    {
+      "name": "Audit form validates empty details and focuses the invalid field",
+      "passed": true
+    },
+    {
+      "name": "Audit requires reply permission while marketing remains optional",
+      "passed": true
+    },
+    {
+      "name": "Network failure preserves details and never shows false success",
+      "passed": true
+    },
+    {
+      "name": "Retry saves the audit and returns a real request reference",
+      "passed": true
+    },
+    {
+      "name": "Private desk loads the saved request and retains updates after reload",
+      "passed": true
+    },
+    {
+      "name": "Private desk exports the authorized request list",
+      "passed": true
+    },
+    {
+      "name": "Team sign-out returns to the protected sign-in screen",
+      "passed": true
+    },
+    {
+      "name": "Demo enquiry changes persist locally and remain labeled fictional",
+      "passed": true
+    },
+    {
+      "name": "Review drafts save locally without publishing",
+      "passed": true
+    },
+    {
+      "name": "Onboarding checklist and demo reset work",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation opens and changes routes",
+      "passed": true
+    },
+    {
+      "name": "Mobile routes and workspace tabs fit at 390px without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Reduced-motion mode keeps core content and interactions available",
+      "passed": true
+    },
+    {
+      "name": "Browser runtime and console checks are clear",
+      "passed": true
+    }
+  ],
+  "passed": 20,
+  "pageErrors": [],
+  "consoleErrors": [],
+  "expectedNetworkFaultConsoleErrors": [
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "productionBase": "http://127.0.0.1:4173",
+  "isolatedOperationsBase": "http://127.0.0.1:4243"
+}
