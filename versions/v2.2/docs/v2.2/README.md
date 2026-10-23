@@ -28,7 +28,9 @@ The server uses salted scrypt password hashes, hashed random session tokens, HTT
 
 Public URL: https://local-lanchers-v22.vercel.app
 
-This updates the existing `brisk-nebula-tclk3yf` Vercel project in the authenticated account. Deployment ID: `dpl_5qnjxxxi6jtFMGkKqbRGemZcL2VH`. The signed-out browser check confirms that Vercel authentication is not required. The release snapshot is in `versions/v2.2`; the active source remains `app/`.
+Browser-playable walkthrough: https://local-lanchers-v22.vercel.app/downloads/local-lanchers-v2.2-walkthrough.mp4
+
+This updates the existing `brisk-nebula-tclk3yf` Vercel project in the authenticated account. Deployment ID: `dpl_8rWtCDKEz299bMNkqQdPASqtEiZM`. The signed-out browser check confirms that Vercel authentication is not required. The release snapshot is in `versions/v2.2`; the active source remains `app/`.
 
 ## Hosting
 
