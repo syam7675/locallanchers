@@ -51,3 +51,7 @@ Account activity queries cover the last 366 days; older events are removed on su
 Browser tests and the walkthrough's account segment use a separate temporary test database and synthetic `.test` email addresses. They do not write into production lead storage. The walkthrough is an actual silent screen recording with explanatory captions, trimmed to remove the long software-rendered hero interaction and loading interval. Its account segment explicitly identifies itself as a full-server demonstration, distinct from public-preview availability.
 
 The repository’s unrelated Django workflow was replaced with Node 24 install/test/build checks for the actual app.
+
+## Customer and admin journey guide
+
+See [the brief](journeys/BRIEF.md), [two-page PDF](journeys/Local-Lanchers-v2.2-Customer-Admin-Guide.pdf), [visual presentation](journeys/Local-Lanchers-v2.2-Journey-Presentation.pdf) and [editable PowerPoint](journeys/Local-Lanchers-v2.2-Journey-Presentation.pptx). Higgsfield tools were unavailable; the artifacts were generated locally from the implemented application.
