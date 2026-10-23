@@ -1,0 +1,11 @@
+promo
+research
+docs
+.git
+app/data
+app/node_modules
+app/.env*
+app/tests
+
+versions
+.env*

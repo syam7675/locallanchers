@@ -1,3 +1,4 @@
+import SculptureHero from "../components/ui/liquid-sculpture-hero";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import {
@@ -23,59 +24,37 @@ export function Home() {
   return (
     <>
       <section className="hero-wrap container">
-        <div className="hero">
-          <motion.img
-            initial={{ scale: 1.035 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 2, ease: "easeOut" }}
-            className="hero-photo"
-            src="/images/growth-hero.webp"
-            alt="An illustrative local salon owner welcoming a customer at reception"
-            fetchPriority="high"
-          />
-          <div className="hero-copy">
-            <p className="eyebrow">DIGITAL GROWTH. HUMAN AT HEART.</p>
-            <motion.h1
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              Your local business
-              <br />
-              deserves to
-              <br />
-              <em>be found.</em>
-            </motion.h1>
-            <p>
-              Get discovered. Turn enquiries into customers.
-              <br className="desktop-only" /> Give them a reason to come back.
-            </p>
-            <div className="hero-buttons">
-              <AuditLink className="light">
-                Find my growth opportunities
-              </AuditLink>
-              <Link className="hero-secondary" to="/how-it-works">
-                See how it works
-                <ArrowRight size={16} />
-              </Link>
-            </div>
-            <span className="hero-footnote">
-              A managed growth partner for local businesses in India.
-            </span>
-          </div>
-          <div className="hero-corner">
-            <span className="eyebrow">THE BIG PICTURE</span>
-            <p>
-              You look after your business.
-              <br />
-              We connect your growth journey.
-            </p>
-            <Link to="/growth">
-              Discover the growth system
-              <ArrowUpRightTiny />
-            </Link>
-          </div>
-        </div>
+        <SculptureHero
+          src="/images/growth-sculpture.webp"
+          darkSrc="/images/growth-sculpture.webp"
+          mobileSrc="/images/growth-sculpture.webp"
+          mobileDarkSrc="/images/growth-sculpture.webp"
+          showNav={false}
+          themeToggle={false}
+          loadFonts={false}
+          showCredit={false}
+          background="#EAE9E7"
+          textColor="#173e36"
+          accentColor="#36694e"
+          headingFont="'Plus Jakarta Sans', sans-serif"
+          bodyFont="'DM Sans', sans-serif"
+          accentFont="Georgia, serif"
+          height="min(790px, 100svh)"
+          eyebrow="LOCAL LANCHERS · DIGITAL GROWTH, HUMAN AT HEART"
+          headline={"Your next chapter.\nBeautifully connected."}
+          headlineAccent="Beautifully connected."
+          body="Get discovered. Turn enquiries into customers. Give them a reason to come back. A managed growth partner for local businesses in India."
+          primaryCta={{ label: "Find my growth opportunities", href: "/audit" }}
+          secondaryCta={{ label: "See how it works", href: "/how-it-works" }}
+          hint="Move across the sculpture"
+          hintTouch=""
+          particleDensity={0.35}
+          ambient={false}
+          intro={false}
+          sculptureScale={0.95}
+          backdropText="GROWTH"
+          className="growth-sculpture"
+        />
       </section>
       <div className="container lifecycle-strip">
         <span>GROWTH IS A JOURNEY.</span>

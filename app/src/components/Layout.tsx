@@ -44,7 +44,7 @@ export function Layout() {
       </a>
       <div className="announcement">
         {import.meta.env.VITE_PUBLIC_DEMO === "true"
-          ? "Version 2.1 · Interactive preview"
+          ? "Version 2.2 · Interactive preview"
           : "A little clarity. A stronger growth plan."}
         <Link to="/audit">
           Start with a Local Growth Audit <ArrowUpRight size={13} />

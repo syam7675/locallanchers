@@ -1,4 +1,4 @@
-# Local Lanchers — Version 2.1
+# Local Lanchers — Version 2.2
 
 A modular React application combining the original Local Lanchers logo and growth-service positioning with the uploaded Version 2 design and interaction patterns.
 
@@ -105,3 +105,7 @@ Before public launch, configure hosting and durable storage, team access, actual
 ## Asset provenance
 
 The original Version 1 logo is copied without modification. The hero is original generated editorial artwork illustrating a local-business interaction; it is not a customer testimonial or a photograph of an identified client. The supplied Version 2 bird sculptures remain illustration assets, not evidence of functioning AI agents. Plus Jakarta Sans and DM Sans are bundled with their OFL licenses. Icons use Lucide, consistent with the uploaded project.
+
+## Version 2.2 accounts and activity
+
+See [the V2.2 release guide](../docs/v2.2/README.md) for the design, heatmap definitions, sign-in instructions, privacy boundaries and verification. Set `ENABLE_USER_ACCOUNTS=true` only on a full Node server with persistent storage to enable individual sign-in. Vercel previews explicitly keep this feature unavailable until durable hosting is connected. No public page or workspace navigation route changed.

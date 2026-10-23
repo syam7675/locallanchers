@@ -1,6 +1,8 @@
-# Local Lanchers — Version 2.1
+# Local Lanchers — Version 2.2
 
 A modular local-business growth application built from Version 1, the uploaded Version 2 project and the supplied business plan. The original Version 1 logo is preserved.
+
+See the [Version 2.2 release notes](docs/v2.2/README.md) for the sculptural design, activity heatmap, account flows and deployment boundaries.
 
 ## Application
 
@@ -18,7 +20,7 @@ Requires Node.js 24+. The application includes the public website, a real persis
 - [Design QA](app/design-qa.md)
 - [Verification evidence](docs/v2.1/verification)
 
-The app is prepared and tested locally. It has not replaced the existing Vercel deployment. Google, WhatsApp, booking, AI and outbound email integrations are not connected.
+The Vercel design preview is deployed separately from the original Version 1 website. Real individual accounts and audit persistence require the full backend on persistent storage. Google, WhatsApp, booking, AI and outbound email integrations are not connected.
 
 ## Promotional video
 

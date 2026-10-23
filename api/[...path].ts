@@ -9,7 +9,7 @@ export default function handler(
       .status(200)
       .json({
         ok: true,
-        version: "2.1.0",
+        version: "2.2.0",
         mode: "public-demo",
         requestStorage: null,
         operationsConfigured: false,

@@ -17,7 +17,7 @@ export function BuildNotes() {
   return (
     <>
       <PageHero
-        eyebrow="VERSION 2.1 / THE BUILD"
+        eyebrow="VERSION 2.2 / THE BUILD"
         title="A clearer system. An honest foundation."
         body="What’s working, what’s a demonstration, and what comes next. A practical view of this Local Lanchers build."
       />
@@ -77,10 +77,18 @@ export function BuildNotes() {
           AI fallbacks and claims that clicking a prototype control sends a real
           message or connects an external service.
         </p>
+        <h2>Added in Version 2.2</h2>
+        <p>
+          A liquid sculpture hero and an activity calendar with 30, 90 and
+          365-day ranges, example profiles, daily activity bands and event
+          details. Individual account sign-in and private history are
+          implemented in the full server build. The Vercel design preview keeps
+          real accounts unavailable until persistent hosting is connected.
+        </p>
         <h2>Current environment</h2>
         <p>
           {health
-            ? `Request storage: ${health.requestStorage}. Private team sign-in: ${health.operationsConfigured ? "configured" : "not yet configured"}.`
+            ? `Request storage: ${health.requestStorage || "not connected on this preview"}. Private team sign-in: ${health.operationsConfigured ? "configured" : "not yet configured"}.`
             : "The environment status could not be checked. The application needs its server to save audit requests."}
         </p>
         <h2>The next release should follow customer evidence</h2>
@@ -150,6 +158,23 @@ export function Privacy() {
           You can request access, correction, deletion or withdrawal of
           marketing permission through the team when they respond, using your
           request reference. No marketing automation is connected in this build.
+        </p>
+        <h2>Individual accounts and activity</h2>
+        <p>
+          Where enabled, account registration stores your name, email, a salted
+          password hash and your agreement to record activity. Email ownership
+          is not verified in this release. An HTTP-only session cookie keeps you
+          signed in for eight hours. Each account can read only its own
+          activity.
+        </p>
+        <p>
+          Activity records contain an identifier, event type and server
+          timestamp for successful sign-ins and workspace interactions. They do
+          not contain passwords, form contents or customer details. The calendar
+          uses India time. Activity older than 366 days is removed during
+          subsequent activity writes; your history is filtered to that range.
+          Use Clear history or Delete account in My real activity to erase these
+          records. Account deletion revokes its sessions.
         </p>
         <h2>Browser storage and cookies</h2>
         <p>

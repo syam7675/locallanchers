@@ -72,3 +72,8 @@ P3: after real customer validation, test copy comprehension with business owners
 - Verification and production limitations documented.
 
 final result: passed
+
+
+## Version 2.2 verification
+
+Passed: 33 API/data checks, 11 browser scenarios, responsive checks at 390/768/1440px, and automated axe WCAG A/AA checks on home/workspace/audit/privacy with zero detected violations. The public Vercel homepage, workspace, plans and audit routes returned 200 in a signed-out browser. New user-account flows were verified against isolated SQLite storage; the public preview explicitly disables real accounts and audit submission. See `docs/v2.2/verification` and `docs/v2.2/README.md`. No public navigation routes changed.

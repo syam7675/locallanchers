@@ -1,0 +1,26 @@
+{
+  "url": "https://local-lanchers-v22.vercel.app",
+  "existingProject": "brisk-nebula-tclk3yf",
+  "checks": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/workspace",
+      "status": 200
+    },
+    {
+      "route": "/plans",
+      "status": 200
+    },
+    {
+      "route": "/audit",
+      "status": 200
+    },
+    {
+      "check": "Public preview explicitly disables real accounts",
+      "passed": true
+    }
+  ]
+}

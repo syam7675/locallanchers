@@ -1,3 +1,4 @@
+import { accountApi } from "./accounts.ts";
 import express from "express";
 import {
   createHash,
@@ -15,6 +16,7 @@ export function createApi(
   store: Store,
   options: {
     password?: string;
+    accountsEnabled?: boolean;
     production?: boolean;
     publicOrigin?: string;
     rateLimit?: number;
@@ -62,6 +64,14 @@ export function createApi(
       next();
     };
   }
+  router.use(
+    "/account",
+    accountApi(
+      store,
+      { enabled: options.accountsEnabled, production: options.production },
+      limit,
+    ),
+  );
   const token = (req: express.Request) => {
     const raw = req.headers.cookie
       ?.split(";")
@@ -88,7 +98,7 @@ export function createApi(
   router.get("/health", (_req, res) =>
     res.json({
       ok: true,
-      version: "2.1.0",
+      version: "2.2.0",
       requestStorage: "sqlite",
       operationsConfigured: !!expected,
       integrations: {
@@ -109,34 +119,28 @@ export function createApi(
     }
     const key = req.get("Idempotency-Key");
     if (!key || !/^[a-zA-Z0-9-]{16,100}$/.test(key)) {
-      res
-        .status(400)
-        .json({
-          error:
-            "A valid request identifier is required. Please refresh and retry.",
-        });
+      res.status(400).json({
+        error:
+          "A valid request identifier is required. Please refresh and retry.",
+      });
       return;
     }
     const result = store.create(value, key);
-    res
-      .status(result.duplicate ? 200 : 201)
-      .json({
-        ok: true,
-        reference: result.request.id,
-        createdAt: result.request.createdAt,
-        status: result.request.status,
-        message:
-          "Your audit request has been saved. A consultation is not booked until the team confirms a time.",
-      });
+    res.status(result.duplicate ? 200 : 201).json({
+      ok: true,
+      reference: result.request.id,
+      createdAt: result.request.createdAt,
+      status: result.request.status,
+      message:
+        "Your audit request has been saved. A consultation is not booked until the team confirms a time.",
+    });
   });
   router.post("/ops/login", limit("login", 5), (req, res) => {
     if (!expected) {
-      res
-        .status(503)
-        .json({
-          error:
-            "The operations desk is not configured. Set OPS_PASSWORD to a strong password of at least 12 characters on the server.",
-        });
+      res.status(503).json({
+        error:
+          "The operations desk is not configured. Set OPS_PASSWORD to a strong password of at least 12 characters on the server.",
+      });
       return;
     }
     const pw = typeof req.body?.password === "string" ? req.body.password : "";
@@ -193,12 +197,10 @@ export function createApi(
       typeof notes !== "string" ||
       notes.length > 2000
     ) {
-      res
-        .status(400)
-        .json({
-          error:
-            "Choose a valid status and use 2,000 characters or fewer for notes.",
-        });
+      res.status(400).json({
+        error:
+          "Choose a valid status and use 2,000 characters or fewer for notes.",
+      });
       return;
     }
     const updated = store.update(req.params.id, status as RequestStatus, notes);
@@ -219,23 +221,19 @@ export function createApi(
       _next: express.NextFunction,
     ) => {
       if (err?.status === 409) {
-        res
-          .status(409)
-          .json({
-            error:
-              "This request was already saved with different details. Start a new request before resubmitting.",
-          });
+        res.status(409).json({
+          error:
+            "This request was already saved with different details. Start a new request before resubmitting.",
+        });
         return;
       }
       const bad =
         err?.type === "entity.parse.failed" || err?.type === "entity.too.large";
-      res
-        .status(bad ? 400 : 500)
-        .json({
-          error: bad
-            ? "The request body is invalid or too large."
-            : "Your request could not be saved. Please try again. No confirmation has been issued.",
-        });
+      res.status(bad ? 400 : 500).json({
+        error: bad
+          ? "The request body is invalid or too large."
+          : "Your request could not be saved. Please try again. No confirmation has been issued.",
+      });
     },
   );
   return router;

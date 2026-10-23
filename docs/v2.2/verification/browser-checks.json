@@ -1,0 +1,34 @@
+{
+  "checks": [
+    "All existing routes render at desktop width",
+    "Range and user filters update calendar",
+    "Calendar supports keyboard movement and selection",
+    "Practice actions update the active demo profile",
+    "Account registration starts a private history with a sign-in event",
+    "Authenticated feature actions appear in the real activity range",
+    "Sign-out and sign-in preserve history and count successful logins",
+    "History clearing and account deletion work",
+    "Responsive routes fit 390px",
+    "Responsive routes fit 768px",
+    "Responsive routes fit 1440px"
+  ],
+  "errors": [],
+  "accessibility": [
+    {
+      "route": "/",
+      "violations": []
+    },
+    {
+      "route": "/workspace",
+      "violations": []
+    },
+    {
+      "route": "/audit",
+      "violations": []
+    },
+    {
+      "route": "/privacy",
+      "violations": []
+    }
+  ]
+}

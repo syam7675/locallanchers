@@ -1,3 +1,5 @@
+import ActivityPanel from "../components/ActivityPanel";
+import { useActivity, demoMembers } from "../hooks/useActivity";
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
@@ -118,6 +120,7 @@ function load() {
   return fresh();
 }
 export default function Workspace() {
+  const activity = useActivity();
   const [q, setQ] = useSearchParams();
   const valid = [
     "overview",
@@ -171,6 +174,7 @@ export default function Workspace() {
         .includes(search.toLowerCase()),
   );
   function update(id: string, status: Entry["status"]) {
+    void activity.record("enquiry_updated");
     setData((d) => ({
       ...d,
       entries: d.entries.map((e) => (e.id === id ? { ...e, status } : e)),
@@ -207,11 +211,13 @@ export default function Workspace() {
         <Info size={17} />
         <span>
           <strong>Interactive demo.</strong> Fictional examples. No external
-          services connected. Changes stay in this browser.
+          services connected. Practice records stay in this browser; signed-in
+          activity is saved to your account.
         </span>
         <button
           onClick={() => {
             setData(fresh());
+            activity.reset();
             setDrafts({});
             setToast("Demo reset to its original examples.");
           }}
@@ -229,6 +235,28 @@ export default function Workspace() {
             connected.
           </h2>
           <span className="example-business">Example local business</span>
+          <div className="sidebar-identity">
+            <span className="activity-avatar">
+              {
+                (activity.source === "real"
+                  ? activity.user?.name || "Guest"
+                  : demoMembers.find((m) => m.id === activity.demoUser)!
+                      .name)[0]
+              }
+            </span>
+            <div>
+              <strong>
+                {activity.source === "real"
+                  ? activity.user?.name || "Not signed in"
+                  : demoMembers.find((m) => m.id === activity.demoUser)!.name}
+              </strong>
+              <small>
+                {activity.source === "real"
+                  ? "Real account activity"
+                  : "Demo profile"}
+              </small>
+            </div>
+          </div>
           <nav aria-label="Workspace sections">
             {nav.map((n) => (
               <button
@@ -237,6 +265,7 @@ export default function Workspace() {
                 className={tab === n.id ? "active" : ""}
                 onClick={() => {
                   setQ({ tab: n.id });
+                  void activity.record("workspace_viewed");
                   setShowAdd(false);
                 }}
               >
@@ -281,6 +310,7 @@ export default function Workspace() {
             >
               {tab === "overview" && (
                 <>
+                  <ActivityPanel state={activity} />
                   <div className="demo-stats">
                     {[
                       ["Example enquiries", data.entries.length],
@@ -395,6 +425,7 @@ export default function Workspace() {
                       onSubmit={(e) => {
                         e.preventDefault();
                         if (!name.trim() || !message.trim()) return;
+                        void activity.record("enquiry_added");
                         setData((d) => ({
                           ...d,
                           entries: [
@@ -563,6 +594,7 @@ export default function Workspace() {
                                       : x,
                                   ),
                                 }));
+                                void activity.record("review_saved");
                                 setActiveReview(null);
                                 setToast(
                                   "Demo reply saved locally. Nothing published.",
@@ -690,14 +722,15 @@ export default function Workspace() {
                       <input
                         type="checkbox"
                         checked={data.done.includes(i)}
-                        onChange={() =>
+                        onChange={() => {
+                          void activity.record("onboarding_updated");
                           setData((d) => ({
                             ...d,
                             done: d.done.includes(i)
                               ? d.done.filter((x) => x !== i)
                               : [...d.done, i],
-                          }))
-                        }
+                          }));
+                        }}
                       />
                       <span>
                         <strong>{s}</strong>

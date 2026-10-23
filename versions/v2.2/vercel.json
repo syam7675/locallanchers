@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm ci --prefix app --no-audit --no-fund",
+  "buildCommand": "VITE_PUBLIC_DEMO=true npm run build --prefix app",
+  "outputDirectory": "app/dist",
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
