@@ -1,0 +1,23 @@
+{
+  "applicationVersion": "2.1.0",
+  "apiTests": {
+    "passed": 25,
+    "failed": 0
+  },
+  "browserChecks": {
+    "passed": 20,
+    "unexpectedRuntimeErrors": [],
+    "unexpectedConsoleErrors": []
+  },
+  "automatedAccessibility": {
+    "routes": 8,
+    "violations": 0,
+    "scope": "representative desktop routes, automated WCAG A/AA rules only"
+  },
+  "typescript": "passed",
+  "productionBuild": "passed",
+  "originalLogo": "unchanged",
+  "publicDeployment": "not performed",
+  "externalProviderConnections": "not configured",
+  "privateTeamDesk": "requires a server-configured OPS_PASSWORD outside tests"
+}

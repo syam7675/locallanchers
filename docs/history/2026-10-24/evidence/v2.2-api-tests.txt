@@ -1,0 +1,45 @@
+
+> local-lanchers-v2-2@2.2.0 test
+> tsx --test tests/*.test.ts
+
+✔ real accounts fail closed when disabled (104.058569ms)
+✔ registration validates consent and password, stores hash, sets private cookie (101.429717ms)
+✔ activity is authenticated, isolated, server dated, idempotent and excludes arbitrary payloads (117.346737ms)
+✔ login creates activity; logout revokes session; history and account deletion are isolated (163.275266ms)
+✔ cross origin account writes fail (5.934715ms)
+✔ activity groups by IST midnight, zero fills and excludes outside range (21.009042ms)
+✔ expired user sessions cannot read or write activity (48.745022ms)
+✔ repeated failed account logins are throttled (302.072888ms)
+✔ a valid request is saved before a minimal confirmation is returned (197.669621ms)
+✔ reply permission is required; refusal does not save a record (53.377057ms)
+✔ email-only contact is accepted without requiring marketing opt-in (0.398585ms)
+✔ phone-only contact is accepted with valid international number (0.219412ms)
+✔ missing reply channels are rejected (0.107754ms)
+✔ invalid email, phone and website are rejected independently (0.228753ms)
+✔ non-objects and arrays do not bypass validation (0.223088ms)
+✔ length limits and honeypot are enforced (0.115429ms)
+✔ idempotent retry returns the same reference and saves once (50.324969ms)
+✔ an idempotency key cannot acknowledge changed request details (43.701125ms)
+✔ missing idempotency key is rejected (38.494721ms)
+✔ audit requests are durably available after reopening the database (1.766071ms)
+✔ private request records reject anonymous reads and writes (41.000014ms)
+✔ unconfigured operations access fails closed (9.033985ms)
+✔ wrong password cannot create a session (75.72884ms)
+✔ login cookie is HTTP-only and same-site strict (80.932551ms)
+✔ authorized operator can review and persist request status and notes (83.947898ms)
+✔ operator updates reject invalid states and nonexistent requests (84.253872ms)
+✔ logout invalidates the previous session token (78.349307ms)
+✔ cross-site submission origin is rejected (38.322451ms)
+✔ malformed JSON produces a controlled failure (42.280519ms)
+✔ rate limit prevents repeated requests beyond the configured allowance (7.0267ms)
+✔ a storage failure does not issue a false confirmation (43.906822ms)
+✔ an expired session cannot read private records (77.018743ms)
+✔ production sessions set the Secure cookie flag (73.801773ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1539.965888

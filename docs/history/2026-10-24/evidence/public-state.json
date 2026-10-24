@@ -1,0 +1,31 @@
+{
+  "checkedAtIST": "2026-10-24T23:16:15.868491+05:30",
+  "url": "https://local-lanchers-v22.vercel.app/",
+  "homepageStatus": 200,
+  "endpoints": {
+    "/api/health": {
+      "status": 200,
+      "body": {
+        "ok": true,
+        "version": "2.2.0",
+        "mode": "public-demo",
+        "requestStorage": null,
+        "operationsConfigured": false
+      }
+    },
+    "/api/account/session": {
+      "status": 200,
+      "body": {
+        "configured": false,
+        "user": null
+      }
+    },
+    "/api/ops/session": {
+      "status": 200,
+      "body": {
+        "authenticated": false,
+        "configured": false
+      }
+    }
+  }
+}
